@@ -6,11 +6,21 @@ If you use any libraries, whether those are your own or external ones, you need 
 
 = Example =
 
-You can do this as follows:
-
+You can do this by including a libraries section in the configuration for the plugin, as in the following example:
 
 {{{
-
+                <configuration>
+                    <jsSourceDirectory>src/main/javascript/</jsSourceDirectory>
+                    <jsTestDirectory>src/test/javascript/</jsTestDirectory>
+                    <ignoreFailures>false</ignoreFailures>
+                    <phantomJsExec>/home/.../opt/phantomjs/bin/phantomjs</phantomJsExec>
+                    <libraries>
+                        <directory>src/test/javascript/lib/</directory>
+                        <includes>
+                            <include>**/*.js</include>
+                        </includes>
+                    </libraries>
+                </configuration>
 }}}
 
 The libraries tag is a normal [http://maven.apache.org/shared/file-management/examples/mojo.html maven file management] sections, support includes and excludes. You can currently add only one directory to this section, so all library files should be in the same place.
