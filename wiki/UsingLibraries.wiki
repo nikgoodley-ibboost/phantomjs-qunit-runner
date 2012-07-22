@@ -9,16 +9,16 @@ If you use any libraries, whether those are your own or external ones, you need 
 You can do this by including a libraries section in the configuration for the plugin (for both the qunit test and generate-html goals), as in the following example:
 
 {{{
-                <configuration>
-							<jsSourceDirectory>${js.source.dir}</jsSourceDirectory>
-							<jsTestDirectory>${js.test.dir}</jsTestDirectory>
-							<includeLibsInDir>
-								<directory>${js.libs.include.dir}</directory>
-								<includes>
-									<include>**/*.js</include>
-								</includes>
-							</includeLibsInDir>
-						</configuration>
+	<configuration>
+		<jsSourceDirectory>${js.source.dir}</jsSourceDirectory>
+		<jsTestDirectory>${js.test.dir}</jsTestDirectory>
+		<includeLibsInDir>
+			<directory>${js.libs.include.dir}</directory>
+			<includes>
+				<include>**/*.js</include>
+			</includes>
+		</includeLibsInDir>
+	</configuration>
 }}}
 
 The libraries tag is a normal [http://maven.apache.org/shared/file-management/examples/mojo.html maven file management] section, supports includes and excludes. You can currently add only one directory to this section, so all library files should be in the same place.
